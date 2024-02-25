@@ -1,0 +1,44 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+  margin: 50px;
+}
+
+.box div {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #222;
+  text-align: center;
+}
+
+.box div h1 {
+  margin: 0;
+  padding: 20px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.box div img {
+  max-width: 100%;
+}
+
+.box div button {
+  margin: 50px auto;
+  border: none;
+  padding: 15px 20px;
+  background-color: rgba(0, 139, 139, 0.593);
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.box div button:hover {
+  background-color: darkcyan;
+}
