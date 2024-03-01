@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Movie from "../Movie/Movie";
+
 //
 function FavList() {
   //
   const [favoList, setFavoList] = useState([]);
   const getFavMovies = async () => {
-    const serverURL = `http://localhost:3000/getMovies`;
+    const serverURL = `${process.env.REACT_APP_SERVER_URL}/getMovies`;
     const res = await axios.get(serverURL);
     setFavoList(res.data);
     // console.log(favoList);
@@ -16,6 +17,7 @@ function FavList() {
     getFavMovies();
   }, [favoList]);
   //
+
   return (
     <>
       <div className="box">
@@ -24,6 +26,7 @@ function FavList() {
             <Movie
               title={ele.title}
               img={`https://image.tmdb.org/t/p/w500/${ele.posterpath}`}
+              posterPath={ele.posterpath}
               id={ele.id}
               parent="fav"
             />
