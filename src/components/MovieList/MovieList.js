@@ -8,6 +8,8 @@ function MovieList(props) {
           <Movie
             title={element.title}
             img={`https://image.tmdb.org/t/p/w500/${element.posterPath}`}
+            posterPath={element.posterPath}
+            parent="all"
           />
         );
       })}
