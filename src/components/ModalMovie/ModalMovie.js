@@ -13,7 +13,7 @@ function ModalMovie(props) {
       releaseDate: "",
       posterPath: props.info.posterPath,
       overview: "",
-      comments: "",
+      comments: event.target.comment.value,
     };
     console.log(obj);
     console.log(props.info.id);
@@ -45,6 +45,16 @@ function ModalMovie(props) {
                 placeholder="Movie name"
                 defaultValue={props.info.title}
               />
+              {/* ---- */}
+              <Form.Label>Comment</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                name="comment"
+                placeholder="Movie Comment"
+                defaultValue={props.info.comments}
+              />
+              {/* ---- */}
             </Form.Group>
 
             <Button type="submit">update</Button>
