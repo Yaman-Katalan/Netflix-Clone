@@ -52,7 +52,7 @@ function ModalMovie(props) {
                 type="text"
                 name="comment"
                 placeholder="Movie Comment"
-                defaultValue={props.info.comments}
+                defaultValue={props.info.comment}
               />
               {/* ---- */}
             </Form.Group>

@@ -6,15 +6,15 @@ import { useState } from "react";
 function Movie(props) {
   //
   const addToFav = async () => {
+    props.sh();
     console.log(props);
-
     const serverURL = `${process.env.REACT_APP_SERVER_URL}/addMovie`;
     const obj = {
       title: props.title,
       releaseDate: "",
       posterPath: props.posterPath,
       overview: "",
-      comments: "",
+      comments: props.myComment,
     };
     await axios.post(serverURL, obj);
     console.log(obj);
@@ -44,7 +44,13 @@ function Movie(props) {
         <h1>{props.title || "No Title Provided"}</h1>
         <img src={props.img} alt="No IMG!" />
         {props.parent === "all" ? (
-          <button onClick={() => addToFav()}>add to the favorite list</button>
+          <button
+            onClick={() => {
+              addToFav();
+            }}
+          >
+            add to the favorite list
+          </button>
         ) : (
           <div className="updateDelete">
             <button

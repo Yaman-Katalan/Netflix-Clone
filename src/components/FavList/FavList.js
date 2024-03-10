@@ -25,6 +25,7 @@ function FavList() {
           return (
             <Movie
               title={ele.title}
+              comment={ele.comments}
               img={`https://image.tmdb.org/t/p/w500/${ele.posterpath}`}
               posterPath={ele.posterpath}
               id={ele.id}
